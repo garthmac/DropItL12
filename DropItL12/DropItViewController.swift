@@ -32,7 +32,7 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate {
 //    var dropsPerRow: Int { return Int(gameView.bounds.size.width / 37.5) }
     var dropsPerRow = 10
     var dropSize: CGSize {
-//        println(dropsPerRow)
+//        print(dropsPerRow)
         let size = gameView.bounds.size.width / CGFloat(dropsPerRow)
         return CGSize(width: size, height: size)
     }
@@ -55,7 +55,7 @@ class DropItViewController: UIViewController, UIDynamicAnimatorDelegate {
     func removeCompletedRow() {
         var dropsToRemove = [UIView]()
         var dropFrame = CGRect(x: 0, y: gameView.frame.maxY, width: dropSize.width, height: dropSize.height)
-            do {
+            repeat {
                 dropFrame.origin.y -= dropSize.height
                 dropFrame.origin.x = 0
                 var dropsFound = [UIView]()

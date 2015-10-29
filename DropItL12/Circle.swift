@@ -15,7 +15,7 @@ class Circle: UIView {
     
     override func drawRect(rect: CGRect) {
         
-        var path = UIBezierPath(ovalInRect: rect)
+        let path = UIBezierPath(ovalInRect: rect)
         fillColor.setFill()
         path.fill()
 //        path.lineWidth = 3.0
@@ -26,7 +26,7 @@ class Circle: UIView {
         //for the horizontal stroke
         let plusHeight: CGFloat = 3.0
         let plusWidth: CGFloat = min(bounds.width, bounds.height) * 0.6
-        var plusPath = UIBezierPath()
+        let plusPath = UIBezierPath()
         plusPath.lineWidth = plusHeight
         
         //move the initial point of the path
@@ -41,7 +41,7 @@ class Circle: UIView {
             y:bounds.height/2 + 0.5))
         
         isPlus = fillColor.hashValue / 100000000
-//        println(isPlus)
+//        print(isPlus)
         if isPlus > 0 {
             //move to the start of the vertical stroke
             plusPath.moveToPoint(CGPoint(
